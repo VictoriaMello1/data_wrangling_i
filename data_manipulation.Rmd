@@ -51,3 +51,37 @@ these do the same thing ^
 relocate(litters_df, litter_number)
 ```
 
+## 'filter' 
+
+filter operates on rows while select operates on columns - you have to give filter a True vs False condition - use logical operators 
+
+```{r}
+filter(litters_df, gd0_weight < 22)
+```
+
+```{r}
+filter(litters_df, gd0_weight >= 22)
+```
+
+Logical ooperators for 'filter' 
+
+```{r}
+filter(litters_df, gd_of_birth == 20)
+```
+
+```{r}
+filter(litters_df, !(gd_of_birth == 20))
+```
+! flips the logical operation
+
+```{r}
+filter(litters_df, gd0_weight >= 22, gd_of_birth == 20)
+```
+
+```{r}
+filter(litters_df, group == "Mod8")
+```
+
+```{r}
+filter(litters_df, group %in% c("Mod8", "Con7"))
+```
