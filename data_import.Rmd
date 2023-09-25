@@ -14,7 +14,7 @@ library(haven)
 Read in the litters dataset. 
 
 ```{r}
-litters_df = read.csv("./data/FAS_litters.csv")
+litters_df = read_csv("./data/FAS_litters.csv")
 litters_df = janitor::clean_names(litters_df)
 ```
 
@@ -35,9 +35,9 @@ skimr::skim(litters_df)
 
 ## Options to read.csv
 
-Check out ?read.csv() for more information
+Check out ?read_csv() for more information
 ```{r}
-litters_df = read.csv("./data/FAS_litters.csv", skip = 10, col.names = (FALSE))
+litters_df = read_csv("./data/FAS_litters.csv", skip = 10)
 ```
 
 ## Reading in other file formats 
@@ -54,5 +54,22 @@ Read in a SAS File
 ```{r}
 pulse_df = read_sas("./data/public_pulse_data.sas7bdat")
 pulse_df
+```
+
+## Comparison with Base R 
+
+what about read.csv? -- NEVER USE this! its base R
+
+```{r}
+litters_df = read_csv("./data/FAS_litters.csv")
+
+```
+
+## Exporting data 
+
+Export the mlb sub table. 
+
+```{r}
+write_csv(mlb_df, "./data/mlb_subtable.csv")
 ```
 
